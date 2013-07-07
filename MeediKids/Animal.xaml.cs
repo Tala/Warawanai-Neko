@@ -19,7 +19,7 @@ namespace MeediKids
 {
     public sealed partial class Animal : UserControl
     {
-        
+
         public Animal()
         {
             this.InitializeComponent();
@@ -28,6 +28,13 @@ namespace MeediKids
         private void OnPointerPressed(object sender, PointerRoutedEventArgs e)
         {
             VisualStateManager.GoToState(this, "Clicked", true);
+
+            SoundPlayer.Play();
+
+            //var uri = new System.Uri("ms-appx:///Assets/Animals/animal.wav");
+            ////var file = Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+            //MediaElement player = new MediaElement() { Source = uri };
+            //player.Play();
             //var uri = new System.Uri("ms-appx:///Assets/Animals/animal_clicked.png");
             //AnimalImage.Source = new BitmapImage(uri);
         }

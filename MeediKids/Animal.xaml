@@ -17,6 +17,7 @@
         
         <Image x:Name="AnimalImage" Source="Assets/Animals/animal_normal.png"/>
         <TextBlock x:Name="AnimalText" Grid.Row="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <MediaElement x:Name="SoundPlayer" Source="Assets/Animals/animal.wav" AutoPlay="False"/>
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="AnimalStates">
