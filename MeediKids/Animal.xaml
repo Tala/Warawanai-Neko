@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     d:DesignHeight="300"
-    d:DesignWidth="400" PointerPressed="OnPointerPressed">
+    d:DesignWidth="400" PointerPressed="OnPointerPressed" >
 
     <Grid>
         <Grid.RowDefinitions>
@@ -22,7 +22,7 @@
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="AnimalStates">
                 <VisualState x:Name="Normal" />
-                <VisualState x:Name="Clicked" >
+                <VisualState x:Name="Active" >
                     <Storyboard>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="AnimalImage"
                                                        Storyboard.TargetProperty="Source" Duration="0:0:1" RepeatBehavior="">

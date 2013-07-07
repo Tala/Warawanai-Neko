@@ -19,24 +19,27 @@ namespace MeediKids
 {
     public sealed partial class Animal : UserControl
     {
+        private DispatcherTimer timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(1) };
 
         public Animal()
         {
             this.InitializeComponent();
+            timer.Tick += timer_Tick;
         }
 
         private void OnPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            VisualStateManager.GoToState(this, "Clicked", true);
+            VisualStateManager.GoToState(this, "Active", true);
 
             SoundPlayer.Play();
+            
+            timer.Start();
+        }
 
-            //var uri = new System.Uri("ms-appx:///Assets/Animals/animal.wav");
-            ////var file = Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
-            //MediaElement player = new MediaElement() { Source = uri };
-            //player.Play();
-            //var uri = new System.Uri("ms-appx:///Assets/Animals/animal_clicked.png");
-            //AnimalImage.Source = new BitmapImage(uri);
+        void timer_Tick(object sender, object e)
+        {
+            timer.Stop();
+            VisualStateManager.GoToState(this, "Normal", false);
         }
     }
 }
