@@ -26,12 +26,12 @@
                     <Storyboard>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="AnimalImage"
                                                        Storyboard.TargetProperty="Source" Duration="0:0:1" RepeatBehavior="">
-                            <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="Assets/Animals/animal_active.png" />
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Assets/Animals/animal_active.png" />
                             <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="Assets/Animals/animal_normal.png" />
                         </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="AnimalText"
                                                        Storyboard.TargetProperty="Text">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="Moooo!" />
+                            <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="Moooo!" />
                             <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="" />
                         </ObjectAnimationUsingKeyFrames>
                     </Storyboard>
