@@ -27,6 +27,22 @@ namespace MeediKids
             set { SetValue(ActivationTextProperty, value); }
         }
 
+        public static readonly DependencyProperty NormalImageProperty = DependencyProperty.Register("NormalImage", typeof(string), typeof(Animal), null);
+
+        public string NormalImage
+        {
+            get { return (string)GetValue(NormalImageProperty); }
+            set { SetValue(NormalImageProperty, value); }
+        }
+
+        public static readonly DependencyProperty ActivationImageProperty = DependencyProperty.Register("ActivationImage", typeof(string), typeof(Animal), null);
+
+        public string ActivationImage
+        {
+            get { return (string)GetValue(ActivationImageProperty); }
+            set { SetValue(ActivationImageProperty, value); }
+        }
+        
         private DispatcherTimer timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(1) };
 
         public Animal()
