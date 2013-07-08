@@ -42,8 +42,24 @@ namespace MeediKids
             get { return (string)GetValue(ActivationImageProperty); }
             set { SetValue(ActivationImageProperty, value); }
         }
-        
-        private DispatcherTimer timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(1) };
+
+        public static readonly DependencyProperty ActivationSoundProperty = DependencyProperty.Register("ActivationSound", typeof(Uri), typeof(Animal), null);
+
+        public Uri ActivationSound
+        {
+            get { return (Uri)GetValue(ActivationSoundProperty); }
+            set { SetValue(ActivationSoundProperty, value); }
+        }
+
+        public static readonly DependencyProperty ActivationDurationProperty = DependencyProperty.Register("ActivationDuration", typeof(TimeSpan), typeof(Animal), new PropertyMetadata(TimeSpan.FromSeconds(2)));
+
+        public TimeSpan ActivationDuration
+        {
+            get { return (TimeSpan)GetValue(ActivationDurationProperty); }
+            set { SetValue(ActivationDurationProperty, value); }
+        }
+
+        private DispatcherTimer timer = new DispatcherTimer();
 
         public Animal()
         {
@@ -57,6 +73,7 @@ namespace MeediKids
 
             SoundPlayer.Play();
 
+            timer.Interval = ActivationDuration;
             timer.Start();
         }
 

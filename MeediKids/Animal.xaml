@@ -8,6 +8,10 @@
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400" PointerPressed="OnPointerPressed" x:Name="This">
+    
+    <UserControl.Resources>
+        <local:HalveTimeConverter x:Key="HalveTimeConverter"/>
+    </UserControl.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,25 +19,24 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <Image x:Name="AnimalImage" Source="Assets/Animals/animal_normal.png"/>
+        <Image x:Name="AnimalImage" Source="{Binding ElementName=This, Path=NormalImage}" />
         <TextBlock x:Name="AnimalText" Grid.Row="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding ElementName=This, Path=ActivationText}" Opacity="0"/>
-        <MediaElement x:Name="SoundPlayer" Source="Assets/Animals/animal.wav" AutoPlay="False"/>
+        <MediaElement x:Name="SoundPlayer" Source="{Binding ElementName=This, Path=ActivationSound}" AutoPlay="False"/>
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="AnimalStates">
-                <VisualState x:Name="Normal" >
-                    <Storyboard>
-                        <DoubleAnimation Storyboard.TargetName="AnimalText" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:1"/>
-                    </Storyboard>
-                </VisualState>
+                <VisualState x:Name="Normal" />
                 <VisualState x:Name="Active" >
-                    <Storyboard>
+                    <Storyboard Duration="{Binding ElementName=This, Path=ActivationDuration}">
+                        <!-- animation of the image -->
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="AnimalImage"
-                                                       Storyboard.TargetProperty="Source" Duration="0:0:1" RepeatBehavior="">
+                                                       Storyboard.TargetProperty="Source" AutoReverse="True" Duration="{Binding ElementName=This, Path=ActivationDuration}">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="{Binding ElementName=This, Path=ActivationImage}" />
-                            <DiscreteObjectKeyFrame KeyTime="0:0:1" Value="{Binding ElementName=This, Path=NormalImage}" />
                         </ObjectAnimationUsingKeyFrames>
-                        <DoubleAnimation Storyboard.TargetName="AnimalText" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:1"/>
+                        <!-- animation of the sub text -->
+                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="AnimalText" Storyboard.TargetProperty="Opacity" AutoReverse="True" RepeatBehavior="{Binding ElementName=This, Path=ActivationDuration}">
+                            <LinearDoubleKeyFrame Value="1" KeyTime="{Binding ElementName=This, Path=ActivationDuration, Converter={StaticResource HalveTimeConverter}}"/>
+                        </DoubleAnimationUsingKeyFrames>
                     </Storyboard>
                 </VisualState>
             </VisualStateGroup>

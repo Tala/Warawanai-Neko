@@ -109,6 +109,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HalveTimeConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -122,8 +123,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Animals\animal.wav" />
+    <Content Include="Assets\Animals\animal2.wav" />
+    <Content Include="Assets\Animals\animal2_active.png" />
+    <Content Include="Assets\Animals\animal2_normal.png" />
     <Content Include="Assets\Animals\animal_active.png" />
     <Content Include="Assets\Animals\animal_normal.png" />
+    <Content Include="Assets\Animals\meedical-owl_normal.png" />
+    <Content Include="Assets\Animals\sheep_normal.png" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
