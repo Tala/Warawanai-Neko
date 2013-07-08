@@ -19,6 +19,14 @@ namespace MeediKids
 {
     public sealed partial class Animal : UserControl
     {
+        public static readonly DependencyProperty ActivationTextProperty = DependencyProperty.Register("ActivationText", typeof(string), typeof(Animal), null);
+
+        public string ActivationText
+        {
+            get { return (string) GetValue(ActivationTextProperty); }
+            set { SetValue(ActivationTextProperty, value); }
+        }
+
         private DispatcherTimer timer = new DispatcherTimer() { Interval = TimeSpan.FromSeconds(1) };
 
         public Animal()
@@ -32,7 +40,7 @@ namespace MeediKids
             VisualStateManager.GoToState(this, "Active", true);
 
             SoundPlayer.Play();
-            
+
             timer.Start();
         }
 

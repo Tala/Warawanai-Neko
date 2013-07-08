@@ -10,7 +10,7 @@
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center">:O Dinosaurs! Pirates! Aliens! Zombies! Ninjas! Wizards! :3</TextBlock>
         <Canvas>
-            <local:Animal Canvas.Left="200" Canvas.Top="40"/>
+            <local:Animal Canvas.Left="200" Canvas.Top="40" ActivationText="Moooo!"/>
         </Canvas>
     </Grid>
 </Page>
