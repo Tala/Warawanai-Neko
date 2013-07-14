@@ -16,16 +16,18 @@
     </common:LayoutAwarePage.Resources>
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <Viewbox>
+        <Viewbox Stretch="Uniform" HorizontalAlignment="Left">
             <Grid>
                 <Image Source="Assets/Animals/sheep_normal.png" Opacity="0.2" Stretch="Uniform" />
-                <Canvas>
+                <Canvas HorizontalAlignment="Stretch">
+                    <local:Animal Canvas.Left="100" Canvas.Top="400" ActivationText="Moooo!" ActivationDuration="0:0:2"
+                          NormalImage="Assets/Animals/horse_normal.png" ActivationImage="Assets/Animals/animal_active.png" ActivationSound="Assets/Animals/animal.wav" />
                     <local:Animal Canvas.Left="200" Canvas.Top="40" ActivationText="Moooo!" ActivationDuration="0:0:2"
-                          ActivationImage="Assets/Animals/animal_active.png" NormalImage="Assets/Animals/animal_normal.png" ActivationSound="Assets/Animals/animal.wav" />
+                          NormalImage="Assets/Animals/cow_normal.png" ActivationImage="Assets/Animals/animal_active.png" ActivationSound="Assets/Animals/animal.wav" />
                     <local:Animal Canvas.Left="500" Canvas.Top="200" Height="300" Width="300" ActivationText="DingDing!" ActivationDuration="0:0:6"
-                          ActivationImage="Assets/Animals/animal2_active.png" NormalImage="Assets/Animals/animal2_normal.png" ActivationSound="Assets/Animals/animal2.wav" />
+                          NormalImage="Assets/Animals/cat_normal.png" ActivationImage="Assets/Animals/animal_active.png" ActivationSound="Assets/Animals/animal.wav" />
                     <local:Animal Canvas.Left="800" Canvas.Top="100" ActivationText="Bääähhh!"  ActivationDuration="0:0:4"
-                          ActivationImage="Assets/Animals/meedical-owl_normal.png" NormalImage="Assets/Animals/sheep_normal.png" ActivationSound="Assets/Animals/animal2.wav" />
+                          NormalImage="Assets/Animals/sheep_normal.png" ActivationImage="Assets/Animals/animal_active.png" ActivationSound="Assets/Animals/animal.wav" />
                 </Canvas>
             </Grid>
         </Viewbox>
