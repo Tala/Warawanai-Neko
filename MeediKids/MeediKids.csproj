@@ -109,6 +109,8 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="HalveTimeConverter.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -128,6 +130,9 @@
     <Content Include="Assets\Animals\animal2_normal.png" />
     <Content Include="Assets\Animals\animal_active.png" />
     <Content Include="Assets\Animals\animal_normal.png" />
+    <Content Include="Assets\Animals\cat_normal.png" />
+    <Content Include="Assets\Animals\cow_normal.png" />
+    <Content Include="Assets\Animals\horse_normal.png" />
     <Content Include="Assets\Animals\meedical-owl_normal.png" />
     <Content Include="Assets\Animals\sheep_normal.png" />
     <Content Include="Assets\Logo.png" />
