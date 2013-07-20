@@ -17,17 +17,27 @@
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" >
         <Viewbox Stretch="Uniform" HorizontalAlignment="Left" x:Name="FullView">
-            <Grid>
-                <Image Source="Assets/Animals/sheep_normal.png" Opacity="0.2" Stretch="Uniform" />
+            <Grid Background="DarkGreen" Width="1368" Height="768">
+                <!--<Image Source="Assets/Animals/sheep_normal.png" Opacity="0.2" Stretch="Uniform" />-->
                 <Canvas HorizontalAlignment="Stretch">
-                    <local:Animal Canvas.Left="100" Canvas.Top="400" ActivationText="Moooo!" ActivationDuration="0:0:2"
-                          NormalImage="Assets/Animals/horse_normal.png" ActivationImage="Assets/Animals/animal_active.png" ActivationSound="Assets/Animals/animal.wav" />
-                    <local:Animal Canvas.Left="200" Canvas.Top="40" ActivationText="Moooo!" ActivationDuration="0:0:2"
-                          NormalImage="Assets/Animals/cow_normal.png" ActivationImage="Assets/Animals/animal_active.png" ActivationSound="Assets/Animals/animal.wav" />
-                    <local:Animal Canvas.Left="500" Canvas.Top="200" Height="300" Width="300" ActivationText="DingDing!" ActivationDuration="0:0:6"
-                          NormalImage="Assets/Animals/cat_normal.png" ActivationImage="Assets/Animals/animal_active.png" ActivationSound="Assets/Animals/animal.wav" />
-                    <local:Animal Canvas.Left="800" Canvas.Top="100" ActivationText="Bääähhh!"  ActivationDuration="0:0:4"
-                          NormalImage="Assets/Animals/sheep_normal.png" ActivationImage="Assets/Animals/animal_active.png" ActivationSound="Assets/Animals/animal.wav" />
+                    <local:Animal Canvas.Left="400" Canvas.Top="450" ActivationText="Wheee!"
+                          NormalImage="Assets/Animals/horse_normal.png" ActivationSound="Assets/Animals/horse.wav" />
+                    <local:Animal Canvas.Left="450" Canvas.Top="100" ActivationText="Muuuhh!"
+                          NormalImage="Assets/Animals/cow_normal.png" ActivationSound="Assets/Animals/cow2.wav" />
+                    <local:Animal Canvas.Left="650" Canvas.Top="275" ActivationText="Miauuuu!"
+                          NormalImage="Assets/Animals/cat_normal.png" ActivationSound="Assets/Animals/cat.wav" />
+                    <local:Animal Canvas.Left="200" Canvas.Top="300" ActivationText="Bääähhh!"
+                          NormalImage="Assets/Animals/sheep_normal.png" ActivationSound="Assets/Animals/sheep1.wav" />
+                    
+                    <local:Animal Canvas.Left="1050" Canvas.Top="150" ActivationText="Wuff!"
+                          NormalImage="Assets/Animals/sheep_normal.png" ActivationSound="Assets/Animals/dog_wuff.wav" >
+                        <UserControl.RenderTransform>
+                            <ScaleTransform ScaleX="-1" />
+                        </UserControl.RenderTransform>
+                    </local:Animal>
+                    
+                    <local:Animal Canvas.Left="700" Canvas.Top="500" ActivationText="Bäääähhhh!"
+                          NormalImage="Assets/Animals/sheep_normal.png" ActivationSound="Assets/Animals/sheep2.wav" />
                 </Canvas>
             </Grid>
         </Viewbox>
